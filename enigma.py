@@ -11,8 +11,7 @@ class Enigma:
         self.init_wheels = wheels[:]
         self.wheels = wheels[:]
         self.reflector_map = reflector_map
-        self.counter = 0  # סופר תווים שהוצפנו (לא ריקים)
-
+        self.counter = 0  
     def _encrypt_char(self, c):
         if c not in self.hash_map:
             return c
@@ -49,7 +48,7 @@ class Enigma:
 
     def encrypt(self, message):
         encrypted = []
-        self.wheels = self.init_wheels[:]  # חזרה למצב ההתחלתי
+        self.wheels = self.init_wheels[:]  
         self.counter = 0
         for c in message:
             encrypted_char = self._encrypt_char(c)
